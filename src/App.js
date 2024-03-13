@@ -42,9 +42,8 @@ function App() {
                             ></Route>
                         <Route path='/about' element={<About />} />
                     </Routes>
-                    <AboutIconLink/>
                 </div>
-        
+                    <AboutIconLink/>
             </Router>
         
     ) 
