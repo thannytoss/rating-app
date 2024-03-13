@@ -1,5 +1,5 @@
 import {v4 as uuidv4} from 'uuid'
-import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
+import {BrowserRouter as Router, Route, Routes, NavLink} from 'react-router-dom'
 import { useState } from "react"
 import Header from "./components/Header"
 import FeedbackList from "./components/FeedbackList"
@@ -8,6 +8,7 @@ import FeedbackData from "./data/FeedbackData"
 import FeedbackForm from "./components/FeedbackForm.jsx"
 import AboutIconLink from './components/AboutIconLink.jsx'
 import About from './pages/About.jsx'
+import { FeedbackProvider } from './context/FeedBackContext.js'
 
 
 
@@ -24,7 +25,7 @@ function App() {
     }
 
     return (
-        
+        <FeedbackProvider>
             <Router>
                 <Header />
                 <div className="container">
@@ -42,9 +43,11 @@ function App() {
                             ></Route>
                         <Route path='/about' element={<About />} />
                     </Routes>
+
                 </div>
                     <AboutIconLink/>
             </Router>
+        </FeedbackProvider>
         
     ) 
 }
